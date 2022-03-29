@@ -1,7 +1,6 @@
 const http = require('http');
 const fs = require('fs');
 const cassandra = require('cassandra-driver');
-const { resourceLimits } = require('worker_threads');
 
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -21,10 +20,10 @@ const server = http.createServer((req, res) => {
         }
         else {
             res.write(data);
-            var i = 4;
-            var query = `SELECT first_name, last_name FROM account WHERE account_id = ${i} ALLOW FILTERING`;
+            var id = 1;
+            var query = `SELECT first_name, last_name FROM account WHERE account_id = ${id} ALLOW FILTERING`;
             client.execute(query).then(result => {
-                res.write(`The name of the person with the account ID ${i} is ${result.rows[0].first_name} ${result.rows[0].last_name}\n`);
+                res.write(`The name of the person with the account ID ${id} is ${result.rows[0].first_name} ${result.rows[0].last_name}.\n`);
             }).catch((error) => console.log('ERROR: ', error)).then(() => { res.end(); });
         }
     });
