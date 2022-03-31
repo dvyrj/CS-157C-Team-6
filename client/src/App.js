@@ -1,35 +1,31 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/home";
+import Example from "./pages/example";
+import Login from "./pages/login";
+import Register from "./pages/register";
+import Profile from './pages/profile';
+import ErrorPage from "./pages/error";
 
 function App() {
-
-  const [backendData, setBackendData] = useState([{}]);
-
-  useEffect(() => {
-    fetch("/apple").then(
-      res => res.json()
-    ).then(
-      data => {
-        setBackendData(data)
-      }
-    )
-  }, [])
-
   return (
-    <>
-    <div>
-      {
-        (typeof backendData.first_name === 'undefined') ? 
-          ( <p>Loading...</p> ) : (  backendData.first_name.map((first_name, i) => (<p key={i}>{first_name}</p>)) )
-      }
-    </div>
-    <br></br>
-    <div>
-    {
-      (typeof backendData.last_name === 'undefined') ? 
-        ( <p>Loading...</p> ) : (  backendData.last_name.map((last_name, i) => (<p key={i}>{last_name}</p>)) )
-    }
-  </div>
-  </>
+    <Router>
+      <nav>
+        <Link to="/">Home </Link>
+        <Link to="/login">Login </Link>
+        <Link to="/register">Register </Link>
+        <Link to="/example">Example </Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/home" element={<Home/>} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/profile/:username" element={<Profile />} />
+        <Route path="/example" element={<Example/>} />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+    </Router>
   );
 }
 
