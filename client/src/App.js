@@ -44,7 +44,7 @@ function App() {
             <a href="/register">Register</a>
           </li>
           <li>
-            <a href="/example">Example</a>
+            <a href="/example">Accounts</a>
           </li>
         </ul>
       </div>

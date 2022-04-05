@@ -15,7 +15,7 @@ let localDataCenter = 'datacenter1';
 let keyspace = 'team6';
 let client = new cassandra.Client({contactPoints: contactPoints, localDataCenter: localDataCenter, keyspace: keyspace});
 
-app.get('/test', (req, res) => {
+app.get('/getAccounts', (req, res) => {
   var first_name = [];
   var last_name = [];
   var query = `SELECT * FROM account`;

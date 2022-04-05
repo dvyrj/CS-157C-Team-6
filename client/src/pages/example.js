@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import '../styles/styles.css'
 
 function Example() {
     const [backendData, setBackendData] = useState([{}]);
 
     useEffect(() => {
-        fetch("/test").then(
+        fetch("/getAccounts").then(
             res => res.json()
         ).then(
             data => {
