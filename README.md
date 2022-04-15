@@ -1,8 +1,11 @@
 # CS-157C-Team-6
 
-This is the repository for our project.
+This is the repository for our project..
 
-Install Node JS onto your device
+## Installation
+
+Install Node JS fromc([Node JS Installer](https://nodejs.org/en/download/current/)) onto your system.
+
 Download repository to your device
 Open two command prompts
 In one command prompt, navigate to the “quick-eats-main/server” folder
