@@ -1,5 +1,7 @@
 import React from 'react'
 
+// Customer: Display stores, maybe search
+// Owner: Edit items in store
 function Home() {
     return (
         <>

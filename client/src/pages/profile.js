@@ -1,6 +1,7 @@
 import React from 'react'
 import { useParams } from "react-router-dom";
 
+// Don't need
 function Profile() {
     let { username } = useParams();
     return (

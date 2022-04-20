@@ -29,6 +29,7 @@ app.get('/getAccounts', (req, res) => {
 
 });
 
+// Customer
 app.get('/registerAccount', (req, res) => {
   console.log("Register account into Cassandra here!");
   res.redirect("http://localhost:3000/");
@@ -36,6 +37,52 @@ app.get('/registerAccount', (req, res) => {
 
 app.get('/loginAccount', (req, res) => {
   console.log("Check account in Cassandra here!");
+  res.redirect("http://localhost:3000/");
+});
+
+app.get('/getItems', (req, res) => {
+  res.redirect("http://localhost:3000/");
+});
+
+app.get('/getCartItems', (req, res) => {
+  res.redirect("http://localhost:3000/");
+});
+
+app.get('/getOrders', (req, res) => {
+  res.redirect("http://localhost:3000/");
+});
+
+app.get('/editCart', (req, res) => {
+  res.redirect("http://localhost:3000/");
+});
+
+app.get('/emptyCart', (req, res) => {
+  res.redirect("http://localhost:3000/");
+});
+
+app.get('/addItemToCart', (req, res) => {
+  res.redirect("http://localhost:3000/");
+});
+
+// Store Owner
+app.get('/getOrders', (req, res) => {
+  res.redirect("http://localhost:3000/");
+});
+
+app.get('/getItems', (req, res) => {
+  res.redirect("http://localhost:3000/");
+});
+
+app.get('/editItems', (req, res) => {
+  res.redirect("http://localhost:3000/");
+});
+
+// Admin
+app.get('/getAccounts', (req, res) => {
+  res.redirect("http://localhost:3000/");
+});
+
+app.get('/editAccounts', (req, res) => {
   res.redirect("http://localhost:3000/");
 });
 
