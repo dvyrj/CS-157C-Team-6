@@ -27,7 +27,17 @@ app.get('/getAccounts', (req, res) => {
   }).catch((error) => console.log('ERROR: ', error)).then(
     () => { res.json({ "first_name" : first_name, "last_name" : last_name }); });
 
-})
+});
+
+app.get('/registerAccount', (req, res) => {
+  console.log("Register account into Cassandra here!");
+  res.redirect("http://localhost:3000/");
+});
+
+app.get('/loginAccount', (req, res) => {
+  console.log("Check account in Cassandra here!");
+  res.redirect("http://localhost:3000/");
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
