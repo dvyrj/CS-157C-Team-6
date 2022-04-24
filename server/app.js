@@ -16,16 +16,14 @@ let keyspace = 'team6';
 let client = new cassandra.Client({contactPoints: contactPoints, localDataCenter: localDataCenter, keyspace: keyspace});
 
 app.get('/getAccounts', (req, res) => {
-  var first_name = [];
-  var last_name = [];
+  var data = [];
   var query = `SELECT * FROM account`;
   client.execute(query).then(result => {
     for (let i = 0; i < result.rowLength; i++) {
-      first_name.push(result.rows[i].first_name);
-      last_name.push(result.rows[i].last_name);
+      data.push(result.rows[i]);
     }
   }).catch((error) => console.log('ERROR: ', error)).then(
-    () => { res.json({ "first_name" : first_name, "last_name" : last_name }); });
+    () => { res.json({ "data" : data }); });
 
 });
 
@@ -59,16 +57,14 @@ app.get('/buildTables', (req, res) => {
 
   setTimeout(() => {
     res.redirect("http://localhost:3001/buildSampleData");
-  }, 1000);
-
-  //res.redirect("http://localhost:3001/");
+  }, 4000);
 });
 
 app.get('/buildSampleData', (req, res) => {
   var insertQueries = [
     "INSERT INTO account(account_id, account_type, date_added, email, password, first_name, last_name, balance, orders_placed, favorite_stores, cart) VALUES(100001, 1, toTimestamp(now()), 'amy.anh@sjsu.edu', 'Amy123', 'Amy', 'Anh', 0, [400001, 400002, 400003, 400004, 400005, 400006, 400006, 400007, 400008, 400009, 400010, 400011, 400012, 400013, 400014, 400015], [], [])",
     "INSERT INTO account(account_id, account_type, date_added, email, password, first_name, last_name, balance, orders_placed, favorite_stores, cart) VALUES(100002, 1, toTimestamp(now()), 'ben.beans@sjsu.edu', 'Ben123', 'Ben', 'Beans', 0, [], [], [])",
-    "INSERT INTO account(account_id, account_type, date_added, email, password, first_name, last_name, balance, orders_placed, favorite_stores, cart) VALUES(100003, 1, toTimestamp(now()), 'caitlyn.chao@sjsu.edu', 'caitlyn123', 'Caitlyn', 'Chao', 0, [], [], [])",
+    "INSERT INTO account(account_id, account_type, date_added, email, password, first_name, last_name, balance, orders_placed, favorite_stores, cart) VALUES(100003, 1, toTimestamp(now()), 'caitlyn.chao@sjsu.edu', 'Caitlyn123', 'Caitlyn', 'Chao', 0, [], [], [])",
     "INSERT INTO account(account_id, account_type, date_added, email, password, first_name, last_name, balance, orders_placed, favorite_stores, cart) VALUES(100004, 1, toTimestamp(now()), 'david.destiny@sjsu.edu', 'David123', 'David', 'Destiny', 0, [], [], [])",
     "INSERT INTO account(account_id, account_type, date_added, email, password, first_name, last_name, balance, orders_placed, favorite_stores, cart) VALUES(100005, 1, toTimestamp(now()), 'edward.elric@sjsu.edu', 'Edward123', 'Edward', 'Elric', 0, [], [], [])",
     "INSERT INTO account(account_id, account_type, date_added, email, password, first_name, last_name, balance, orders_placed, favorite_stores, cart) VALUES(100006, 1, toTimestamp(now()), 'felicia.fantasia@sjsu.edu', 'Felicia123', 'Felcicia', 'Fantasia', 0, [], [], [])",

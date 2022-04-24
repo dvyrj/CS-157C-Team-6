@@ -9,7 +9,7 @@ function Example() {
             res => res.json()
         ).then(
             data => {
-            setBackendData(data)
+                setBackendData(data)
             }
         )
     }, []);
