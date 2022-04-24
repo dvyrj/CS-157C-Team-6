@@ -1,0 +1,42 @@
+html.login_js {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center; 
+  background-image: url("https://files.wallpaperpass.com/2019/10/food%20wallpaper%20131%20-%201920x1080.jpg");
+  padding-bottom: 225px;
+}
+div.login_box
+{
+  padding-left: 600px;
+  padding-right: 600px;
+  padding-top: 100px;
+}
+form.login_form {
+  border-radius: 10px;
+  padding: 20px;
+  background-color: white;
+  height: 280px;
+}
+div.email {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+div.password {
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+input.login_input {
+  width: 100%;
+  margin: 2px 0;
+  padding: 5px 8px;
+  box-sizing: border-box;
+}
+input.password_input {
+  width: 100%;
+  margin: 2px 0;
+  padding: 5px 8px;
+  box-sizing: border-box;
+}
+input.submit_input:hover {
+  cursor: pointer;
+  background-color: whitesmoke;
+}
