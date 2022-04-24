@@ -1,4 +1,4 @@
-html.login_js {
+.login_js {
   font-family: Georgia, 'Times New Roman', Times, serif;
   text-align: center; 
   background-image: url("../assets/wallpaper.jpg");
@@ -6,11 +6,11 @@ html.login_js {
   background-size: cover;
   padding-bottom: 225px;
 }
-div.login_box
+.login_box
 {
   padding-top: 100px;
 }
-form.login_form {
+.login_form {
   border-radius: 10px;
   padding: 20px;
   background-color: white;
@@ -18,27 +18,27 @@ form.login_form {
   width: 250px;
   margin: auto;
 }
-div.email {
+.email {
   padding-top: 5px;
   padding-bottom: 5px;
 }
-div.password {
+.password {
   padding-top: 5px;
   padding-bottom: 10px;
 }
-input.login_input {
+.login_input {
   width: 100%;
   margin: 2px 0;
   padding: 5px 8px;
   box-sizing: border-box;
 }
-input.password_input {
+.password_input {
   width: 100%;
   margin: 2px 0;
   padding: 5px 8px;
   box-sizing: border-box;
 }
-input.submit_input:hover {
+.submit_input:hover {
   cursor: pointer;
   background-color: whitesmoke;
 }
