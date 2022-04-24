@@ -1,5 +1,6 @@
 import React from 'react'
 
+// Don't need
 function Register() {
     return (
         <>
