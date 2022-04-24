@@ -1,7 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home";
-import Example from "./pages/example";
+import Accounts from "./pages/accounts";
 import Login from "./pages/login";
 import Register from "./pages/register";
 import Profile from './pages/profile';
@@ -44,7 +44,7 @@ function App() {
             <a href="/register">Register</a>
           </li>
           <li>
-            <a href="/example">Accounts</a>
+            <a href="/accounts">Accounts</a>
           </li>
         </ul>
       </div>
@@ -56,7 +56,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/profile/:username" element={<Profile />} />
-        <Route path="/example" element={<Example/>} />
+        <Route path="/accounts" element={<Accounts/>} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Router>
