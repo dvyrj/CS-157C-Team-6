@@ -1,0 +1,71 @@
+Installing Cassandra on Mac OS X
+================================
+
+Install Homebrew
+----------------
+Homebrew is a great little package manager for OS X. If you haven't already, installing it is pretty easy:
+
+```Shell
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+```
+
+Install Python
+--------------
+Mac OS X has a copy of Python preinstalled, but this makes sure you get the newest version.
+
+```Shell
+brew install python
+```
+
+Install cql
+-----------
+To use cqlsh, the Cassandra query language shell, you need to install cql:
+
+```Shell
+pip install cql
+```
+
+Install Cassandra
+-----------------
+This installs Apache Cassandra:
+
+```Shell
+brew install cassandra
+```
+
+Starting/Stopping Cassandra
+---------------------------
+Use this command to start Cassandra:
+
+```Shell
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.cassandra.plist
+```
+
+Use this command to stop Cassandra:
+
+```Shell
+launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.cassandra.plist
+```
+
+On Mavericks, Homebrew failed to move the plist file into LaunchAgents, which gives this error message:
+
+```Shell
+launchctl: Couldn't stat("/Users/<user>/Library/LaunchAgents/homebrew.mxcl.cassandra.plist"): No such file or directory
+```
+
+To fix this just issue the following command. Then, try using the `launchctl load` command again:
+
+```Shell
+cp /usr/local/Cellar/cassandra/<version number>/homebrew.mxcl.cassandra.plist ~/Library/LaunchAgents/
+```
+
+Cassandra file locations
+------------------------
+- Properties: `/usr/local/etc/cassandra`
+- Logs: `/usr/local/var/log/cassandra`
+- Data: `/usr/local/var/lib/cassandra/data`
+
+Links
+-----
+- [Apache Cassandra] (http://cassandra.apache.org/)
+- [Datastax Cassandra Documentation] (http://www.datastax.com/documentation/cassandra/2.0/cassandra/gettingStartedCassandraIntro.html)
