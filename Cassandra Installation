@@ -3,7 +3,7 @@ Installing Cassandra on Mac OS X
 
 Install Homebrew
 ----------------
-Homebrew is a great little package manager for OS X. If you haven't already, installing it is pretty easy:
+Homebrew is a great little package manager for OS X.
 
 ```Shell
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
@@ -45,18 +45,6 @@ Use this command to stop Cassandra:
 
 ```Shell
 launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.cassandra.plist
-```
-
-On Mavericks, Homebrew failed to move the plist file into LaunchAgents, which gives this error message:
-
-```Shell
-launchctl: Couldn't stat("/Users/<user>/Library/LaunchAgents/homebrew.mxcl.cassandra.plist"): No such file or directory
-```
-
-To fix this just issue the following command. Then, try using the `launchctl load` command again:
-
-```Shell
-cp /usr/local/Cellar/cassandra/<version number>/homebrew.mxcl.cassandra.plist ~/Library/LaunchAgents/
 ```
 
 Cassandra file locations
