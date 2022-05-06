@@ -72,3 +72,4 @@ router.post('/api/authenticate_emailid', async (req, res) => {
 });
 
 module.exports = router;
+
