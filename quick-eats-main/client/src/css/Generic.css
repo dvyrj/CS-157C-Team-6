@@ -1,0 +1,19 @@
+.hamburger{
+    font-size: 200%;
+}
+
+.uber_btns{
+    background-color: black;
+    color: white;
+    width: 75%;
+    height: 7%;
+    margin: 10% 5% 10% 12%;
+}
+
+.margin_bottom{
+    margin-bottom: 3%;
+}
+
+.modal_big{
+    width: 90%;
+}

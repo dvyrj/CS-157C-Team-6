@@ -1,0 +1,11 @@
+{
+    "DB" : {
+        "host" : "quickeats.c6bfpe5lts3t.ap-south-1.rds.amazonaws.com",
+        "username" : "quickeats",
+        "password" : "quickeats",
+        "port": 3306,
+        "database" : "quickeats"
+    },
+    "secret":"",
+    "client":"http://localhost:3000"
+}

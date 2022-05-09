@@ -1,0 +1,55 @@
+html{
+    min-height:100%;/* make sure it is at least as tall as the viewport */
+    position:relative;
+}
+body{
+    height:100%; /* force the BODY element to match the height of the HTML element */
+}
+
+.sideBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    background-color: white;
+    z-index: 2;
+    box-shadow: 100% white;
+}
+
+.blur{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: black;
+    opacity: 0.5;
+    position: absolute;
+}
+
+.signin_btn, .logut_btn{
+    background-color: black;
+    color: white;
+    width: 75%;
+    height: 7%;
+    margin: 10% 5% 10% 12%;
+}
+
+.sideBar a{
+    text-decoration: none;
+    color: black;
+    margin: 15% 12% 10% 12%;
+}
+
+.sideBar a:hover{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.459);
+}
+
+.res_sidebar_btns, .cust_sidebar_btns{
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    width: 75%;
+    height: auto;
+    margin-top: 5%;
+}
