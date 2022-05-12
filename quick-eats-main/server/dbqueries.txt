@@ -9,10 +9,10 @@ CREATE TABLE dishes(dish_id TEXT, restaurant_id TEXT, dish_name TEXT, dish_descr
 CREATE TABLE orders(order_id TEXT, cust_email_id TEXT, restaurant_id TEXT, dishes_ordered TEXT, delivery_address TEXT, order_timestamp TEXT, order_price TEXT, payment_mode TEXT, status TEXT, PRIMARY KEY ( order_id, cust_email_id)); 
 
 INSERT INTO restaurants ( restaurant_id, store_name, store_location, owner_email, description, restaurant_img, cuisine, timings, delivery_type, dishes_type, phone, street, state, country, pincode)
-VALUES ('1', 'Jack box', 'San Jose', 'jack@gmail.com', 'Jack in the Box', 'https://quickeatss3.s3.us-east-2.amazonaws.com/customerProfile/1651567637319.jpeg', 'Junk', '10:00 AM to 11:00 PM', 'DELIVERY', 'NONVEG', '6692603185', '360 S Market St', 'CA', 'United States', '95113')
+VALUES ('1', 'Jack box', 'San Jose', 'jack@gmail.com', 'Jack in the Box', 'https://quickeatss3.s3.us-east-2.amazonaws.com/customerProfile/1651567637319.jpeg', 'Junk', '10:00 AM to 11:00 PM', 'DELIVERY', 'NONVEG', '6692603185', '360 S Market St', 'CA', 'United States', '95113');
 
 INSERT INTO restaurants (restaurant_id, store_name, store_location, owner_email, description, restaurant_img, cuisine, timings, delivery_type, dishes_type, phone, street, state, country, pincode) 
-VALUES('2', 'Thai Spice', 'San Jose', 'thai@gmail.com', 'Best Restaurant', 'https://quickeatss3.s3.us-east-2.amazonaws.com/customerProfile/1651626834692.jpeg', 'Thai Cuisine', '10:00 AM to 5:00 PM', 'PICKUP', 'NONVEG', '6692603185', '360 S Market St', 'CA', 'United States', '95113')
+VALUES('2', 'Thai Spice', 'San Jose', 'thai@gmail.com', 'Best Restaurant', 'https://quickeatss3.s3.us-east-2.amazonaws.com/customerProfile/1651626834692.jpeg', 'Thai Cuisine', '10:00 AM to 5:00 PM', 'PICKUP', 'NONVEG', '6692603185', '360 S Market St', 'CA', 'United States', '95113');
 
 INSERT INTO users (user_id, user_name, user_emailId, user_pwd, restaurant_owner)
 VALUES ('1', 'crackjack', 'jack@gmail.com', '12345', 'Y');
