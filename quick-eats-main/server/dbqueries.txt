@@ -1,10 +1,12 @@
+CREATE KEYSPACE team6 WITH replication = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
+
 CREATE TABLE users(user_id TEXT, user_name TEXT, user_emailId TEXT, user_pwd TEXT, restaurant_owner TEXT, PRIMARY KEY ( user_id ));
 
 CREATE TABLE customer_profiles(profile_id TEXT, email_id TEXT, phone TEXT, name TEXT, nick_name TEXT, DOB TEXT, address TEXT, profile_img TEXT, favourites TEXT, PRIMARY KEY ( profile_id ));
 
 CREATE TABLE restaurants(restaurant_id TEXT, store_name TEXT, store_location TEXT, owner_email TEXT, description TEXT, restaurant_img TEXT, cuisine TEXT, timings TEXT, delivery_type TEXT, dishes_type TEXT, phone TEXT, street TEXT, state TEXT, country TEXT, pincode TEXT, PRIMARY KEY ( restaurant_id, owner_email ));
 
-CREATE TABLE dishes(dish_id TEXT, restaurant_id TEXT, dish_name TEXT, dish_description TEXT, dish_price TEXT, dish_ingredients TEXT, dish_img TEXT, dish_category TEXT, PRIMARY KEY ( dish_id, dish_name ));
+CREATE TABLE dishes(dish_id TEXT, restaurant_id TEXT, dish_name TEXT, dish_description TEXT, dish_price TEXT, dish_ingredients TEXT, dish_img TEXT, dish_category TEXT, PRIMARY KEY ( dish_id ));
 
 CREATE TABLE orders(order_id TEXT, cust_email_id TEXT, restaurant_id TEXT, dishes_ordered TEXT, delivery_address TEXT, order_timestamp TEXT, order_price TEXT, payment_mode TEXT, status TEXT, PRIMARY KEY ( order_id, cust_email_id)); 
 
@@ -24,13 +26,13 @@ INSERT INTO users (user_id, user_name, user_emailId, user_pwd, restaurant_owner)
 VALUES ('3', 'rest2', 'thai@gmail.com', '12345', 'Y');
 
 INSERT INTO orders( order_id, cust_email_id, restaurant_id, dishes_ordered, delivery_address, order_timestamp, order_price, payment_mode, status)
-VALUES ('1', 'cust1@gmail.com', '1', '[{\"dishId\":1,\"dishName\":\"Curly Fries\",\"dish_quantity\":\"1\",\"dish_price\":\"10\"}]', '{\"street\":\"360 S Market St\",\"city\":\"San Jose\",\"state\":\"CA\",\"country\":\"United States\",\"pincode\":\"95113\"}', 'Tue May 03 2022 01:57:19 GMT-0700 (Pacific Daylight Time)', '11.10', 'cash', 'DELIVERED');
+VALUES ('1', 'cust1@gmail.com', '1', '[{"dishId":1,"dishName":"Curly Fries","dish_quantity":"1","dish_price":"10"}]', '{"street":"360 S Market St","city":"San Jose","state":"CA","country":"United States","pincode":"95113"}', 'Tue May 03 2022 01:57:19 GMT-0700 (Pacific Daylight Time)', '11.10', 'cash', 'DELIVERED');
 
 INSERT INTO orders( order_id, cust_email_id, restaurant_id, dishes_ordered, delivery_address, order_timestamp, order_price, payment_mode, status)
-VALUES ('2', 'cust1@gmail.com', '1', '[{\"dishId\":1,\"dishName\":\"Curly Fries\",\"dish_quantity\":\"1\",\"dish_price\":\"10\"}]', '{\"street\":\"360 S Market St\",\"city\":\"San Jose\",\"state\":\"CA\",\"country\":\"United States\",\"pincode\":\"95113\"}', 'Tue May 03 2022 18:17:05 GMT-0700 (Pacific Daylight Time)', '11.10', 'cash', 'RECEIVED');
+VALUES ('2', 'cust1@gmail.com', '1', '[{"dishId":1,"dishName":"Curly Fries","dish_quantity":"1","dish_price":"10"}]', '{"street":"360 S Market St","city":"San Jose","state":"CA\","country":"United States","pincode":"95113"}', 'Tue May 03 2022 18:17:05 GMT-0700 (Pacific Daylight Time)', '11.10', 'cash', 'RECEIVED');
 
 INSERT INTO orders( order_id, cust_email_id, restaurant_id, dishes_ordered, delivery_address, order_timestamp, order_price, payment_mode, status)
-VALUES ('3', 'cust1@gmail.com', '1', '[{\"dishId\":1,\"dishName\":\"Curly Fries\",\"dish_quantity\":\"1\",\"dish_price\":\"10\"}]', '{\"street\":\"360 S Market St\",\"city\":\"San Jose\",\"state\":\"CA\",\"country\":\"United States\",\"pincode\":\"95113\"}', 'Wed May 04 2022 23:20:51 GMT-0700 (Pacific Daylight Time)', '11.10', 'cash', 'PREPARING');
+VALUES ('3', 'cust1@gmail.com', '1', '[{"dishId":1,"dishName":"Curly Fries","dish_quantity":"1","dish_price":"10"}]', '{"street":"360 S Market St","city":"San Jose","state":"CA","country":"United States","pincode":"95113"}', 'Wed May 04 2022 23:20:51 GMT-0700 (Pacific Daylight Time)', '11.10', 'cash', 'PREPARING');
 
 INSERT INTO dishes (dish_id, restaurant_id, dish_name, dish_description, dish_price, dish_ingredients, dish_img, dish_category)
 VALUES ('1', '1', 'Curly Fries', 'Spicy', '10', 'Potato', 'https://quickeatss3.s3.us-east-2.amazonaws.com/dish/1651567698957.jpeg', 'VEGAN');
