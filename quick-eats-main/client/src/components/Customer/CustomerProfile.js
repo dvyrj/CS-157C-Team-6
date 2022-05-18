@@ -60,7 +60,7 @@ export default class CustomerProfile extends Component {
                     phone: customerProfile.phone,
                     name: customerProfile.name,
                     nickName: customerProfile.nick_name,
-                    dob: customerProfile.DOB,
+                    dob: customerProfile.dob,
                     street: JSON.parse(customerProfile.address).street,
                     city: JSON.parse(customerProfile.address).city,
                     state: JSON.parse(customerProfile.address).state,
@@ -85,7 +85,7 @@ export default class CustomerProfile extends Component {
                 country: '',
                 pincode: '',
                 profileImg: '',
-                noProfileData: '',
+                noProfileData: true,
                 profileId: ''
             })
         }

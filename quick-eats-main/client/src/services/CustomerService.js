@@ -188,17 +188,16 @@ export async function getFavourites(request){
 
     let currFavourites = [];
     try{
-        currFavourites = await axios.post(`${serverUrl}/api/getFavourites`,request);
-        if(currFavourites.data){
-            console.log("Current Favourite Dishes are :" + currFavourites.data[0].favourites);
-            return currFavourites.data[0].favourites;
+        currFavourites = await axios.post(`${serverUrl}/api/getFavourites`, request);
+        if(currFavourites.data) {
+            console.log("Current Favourite Dishes are :" + currFavourites.data.rows[0].favourites);
+            return currFavourites.data.rows[0].favourites;
         }
     }
-    catch(e){
+    catch(e) {
         console.log(e);
     }
-    return currFavourites;
-
+    //return currFavourites;
 }
 
 export async function updateFavourites(request){
@@ -219,9 +218,9 @@ export async function getRestaurantProfileByID(request) {
     let restaurant = null;
     try{
         restaurant = await axios.post(`${serverUrl}/api/getRestaurantProfileByID`,request);
-        console.log("Current Restaurant is :" + restaurant.data[0]);
+        console.log("Current Restaurant is :" + restaurant.data.rows[0]);
         if(restaurant){
-            return restaurant.data[0];
+            return restaurant.data.rows[0];
         }
     }
     catch(e){

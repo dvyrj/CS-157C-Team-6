@@ -194,15 +194,31 @@ router.post('/api/getRestaurantsBasedonSearch', async (req, res) => {
 
 router.post('/api/getFavourites', async (req, res) => {
   const emailId = req.body.emailId;
-  const select_favourites = `SELECT favourites from customer_profiles where email_id = ?`;
-  await connection.query(select_favourites, [emailId], async function (error, results) {
+  const select_profile_id = `select profile_id from customer_profiles where email_id = ? ALLOW FILTERING`;
+  await CassandraClient.execute(select_profile_id, [emailId], async function (error, results) {
     if (error) {
+      console.log(error);
       console.log("Not Successfull");
-      res.send(JSON.stringify(error));
     }
-    else {
-      console.log('Successfully Retrieved the favourites for the customer');
-      res.send(JSON.stringify(results));
+    else
+    {
+      let profile_id;
+      for (let i = 0; i < results.rowLength; i++) {
+        profile_id = results.rows[i].profile_id;
+      }
+      const select_favourites = `SELECT favourites from customer_profiles where email_id = ? ALLOW FILTERING`;
+      await CassandraClient.execute(select_favourites, [emailId], async function (error, results) {
+        if (error) {
+          console.log("Not Successfull");
+          console.log(JSON.stringify(error));
+          res.send(JSON.stringify(error));
+        }
+        else {
+          console.log('Successfully Retrieved the favourites for the customer');
+          console.log(results.rows[0].favourites);
+          res.send(JSON.stringify(results));
+        }
+      });
     }
   });
 });
@@ -258,9 +274,10 @@ router.post('/api/getRestaurantsBasedonIds', async (req, res) => {
 router.post('/api/getRestaurantProfileByID', async (req, res) => {
 
   const select_restaurants = `SELECT * FROM restaurants where restaurant_id = ?`;
-  await CassandraClient.execute(select_restaurants, [req.body.resId], async function (error, results) {
+  await CassandraClient.execute(select_restaurants, [req.body.resId.toString()], async function (error, results) {
     if (error) {
       console.log("Not Successfull");
+      console.log(error.message)
       res.send(JSON.stringify(error));
     }
     else {

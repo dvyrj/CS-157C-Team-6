@@ -49,7 +49,7 @@ export default class RestaurantDisplay extends Component {
         dishesFromBackend = await getDishesbyResId(request);
         const result = await getFavourites(requestFavourites);
         if (result) {
-            //currFavourites.push(...(JSON.parse(result)))
+            currFavourites.push(...(JSON.parse(result)))
         }
         if (dishesFromBackend) {
 
@@ -72,7 +72,7 @@ export default class RestaurantDisplay extends Component {
             this.setState({
                 dishes: dishesFromBackend,
                 currFavourites: currFavourites,
-                isFavourite: currFavourites.includes(JSON.stringify(this.props.location.state.restaurantId))
+                isFavourite: currFavourites.includes(this.props.location.state.restaurantId)
             });
         }
     }
@@ -82,7 +82,7 @@ export default class RestaurantDisplay extends Component {
         if (this.state.currFavourites) {
             updatedFavourites = this.state.currFavourites;
         }
-        updatedFavourites.push(JSON.stringify(this.props.location.state.restaurantId));
+        updatedFavourites.push(this.props.location.state.restaurantId.toString());
         const requestAddFavourites = {
             emailId: localStorage.getItem('emailId'),
             updatedFavourites: JSON.stringify(updatedFavourites)
@@ -105,7 +105,7 @@ export default class RestaurantDisplay extends Component {
         if (this.state.currFavourites) {
             updatedFavourites = this.state.currFavourites;
         }
-        updatedFavourites = updatedFavourites.filter((value) => { return value !== JSON.stringify(this.props.location.state.restaurantId) });
+        updatedFavourites = updatedFavourites.filter((value) => { return value !== this.props.location.state.restaurantId.toString() });
         const requestAddFavourites = {
             emailId: localStorage.getItem('emailId'),
             updatedFavourites: JSON.stringify(updatedFavourites)
