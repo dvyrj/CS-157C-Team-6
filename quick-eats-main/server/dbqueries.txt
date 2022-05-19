@@ -36,3 +36,45 @@ VALUES ('3', 'cust1@gmail.com', '1', '[{"dishId":1,"dishName":"Curly Fries","dis
 
 INSERT INTO dishes (dish_id, restaurant_id, dish_name, dish_description, dish_price, dish_ingredients, dish_img, dish_category)
 VALUES ('1', '1', 'Curly Fries', 'Spicy', '10', 'Potato', 'https://quickeatss3.s3.us-east-2.amazonaws.com/dish/1651567698957.jpeg', 'VEGAN');
+
+INSERT INTO dishes (dish_id, restaurant_id, dish_name, dish_description, dish_price, dish_ingredients, dish_img, dish_category)
+VALUES ('2', '1', 'Fries', 'Not Spicy', '10', 'Potato', 'https://quickeatss3.s3.us-east-2.amazonaws.com/dish/1651567698957.jpeg', 'VEGAN');
+
+INSERT INTO dishes (dish_id, restaurant_id, dish_name, dish_description, dish_price, dish_ingredients, dish_img, dish_category)
+VALUES ('3', '1', 'Curly Curly Fries', 'Spicy and Curly', '10', 'Potato', 'https://quickeatss3.s3.us-east-2.amazonaws.com/dish/1651567698957.jpeg', 'VEGAN');
+
+INSERT INTO dishes (dish_id, restaurant_id, dish_name, dish_description, dish_price, dish_ingredients, dish_img, dish_category)
+VALUES ('4', '1', 'Spicier Curly Fries', 'Spicier', '10', 'Potato', 'https://quickeatss3.s3.us-east-2.amazonaws.com/dish/1651567698957.jpeg', 'VEGAN');
+
+INSERT INTO dishes (dish_id, restaurant_id, dish_name, dish_description, dish_price, dish_ingredients, dish_img, dish_category)
+VALUES ('5', '1', 'Spiciest Curly Fries', 'Spiciest', '10', 'Potato', 'https://quickeatss3.s3.us-east-2.amazonaws.com/dish/1651567698957.jpeg', 'VEGAN');
+
+INSERT INTO dishes (dish_id, restaurant_id, dish_name, dish_description, dish_price, dish_ingredients, dish_img, dish_category)
+VALUES ('6', '1', 'Inferno Curly Fries', 'Inferno', '10', 'Potato', 'https://quickeatss3.s3.us-east-2.amazonaws.com/dish/1651567698957.jpeg', 'VEGAN');
+
+INSERT INTO dishes (dish_id, restaurant_id, dish_name, dish_description, dish_price, dish_ingredients, dish_img, dish_category)
+VALUES ('7', '1', 'Meat Fries', 'Meaty', '10', 'Potato', 'https://quickeatss3.s3.us-east-2.amazonaws.com/dish/1651567698957.jpeg', 'VEGAN');
+
+INSERT INTO dishes (dish_id, restaurant_id, dish_name, dish_description, dish_price, dish_ingredients, dish_img, dish_category)
+VALUES ('8', '1', 'Meat Curly Fries', 'Meaty and Spicy', '10', 'Potato', 'https://quickeatss3.s3.us-east-2.amazonaws.com/dish/1651567698957.jpeg', 'VEGAN');
+
+INSERT INTO dishes (dish_id, restaurant_id, dish_name, dish_description, dish_price, dish_ingredients, dish_img, dish_category)
+VALUES ('9', '1', 'Spicy Meat Curly Fries', 'Spicy, Meat, Curly', '10', 'Potato', 'https://quickeatss3.s3.us-east-2.amazonaws.com/dish/1651567698957.jpeg', 'VEGAN');
+
+INSERT INTO dishes (dish_id, restaurant_id, dish_name, dish_description, dish_price, dish_ingredients, dish_img, dish_category)
+VALUES ('10', '1', 'Mega Fries', 'Mega Sized', '10', 'Potato', 'https://quickeatss3.s3.us-east-2.amazonaws.com/dish/1651567698957.jpeg', 'VEGAN');
+
+INSERT INTO dishes (dish_id, restaurant_id, dish_name, dish_description, dish_price, dish_ingredients, dish_img, dish_category)
+VALUES ('11', '1', 'Mega Curly Fries', 'Mega Fries with Spice', '10', 'Potato', 'https://quickeatss3.s3.us-east-2.amazonaws.com/dish/1651567698957.jpeg', 'VEGAN');
+
+INSERT INTO dishes (dish_id, restaurant_id, dish_name, dish_description, dish_price, dish_ingredients, dish_img, dish_category)
+VALUES ('12', '1', 'Baby Fries', 'For Babies', '10', 'Potato', 'https://quickeatss3.s3.us-east-2.amazonaws.com/dish/1651567698957.jpeg', 'VEGAN');
+
+INSERT INTO dishes (dish_id, restaurant_id, dish_name, dish_description, dish_price, dish_ingredients, dish_img, dish_category)
+VALUES ('13', '1', 'Kid Fries', 'For Kids', '10', 'Potato', 'https://quickeatss3.s3.us-east-2.amazonaws.com/dish/1651567698957.jpeg', 'VEGAN');
+
+INSERT INTO dishes (dish_id, restaurant_id, dish_name, dish_description, dish_price, dish_ingredients, dish_img, dish_category)
+VALUES ('14', '1', 'Devil Fries', 'Spicier than Inferno', '10', 'Potato', 'https://quickeatss3.s3.us-east-2.amazonaws.com/dish/1651567698957.jpeg', 'VEGAN');
+
+INSERT INTO dishes (dish_id, restaurant_id, dish_name, dish_description, dish_price, dish_ingredients, dish_img, dish_category)
+VALUES ('15', '1', 'Destruction Fries', 'Spicier than Devil', '10', 'Potato', 'https://quickeatss3.s3.us-east-2.amazonaws.com/dish/1651567698957.jpeg', 'VEGAN');
